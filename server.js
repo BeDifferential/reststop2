@@ -51,7 +51,7 @@ _RESTstop.prototype.match = function(request, response) {
       for (var key in context.params)
         args.push(context.params[key]);
 
-      if(request.method == "POST" || request.method == "PUT") {
+      if(request.method == "POST" || request.method == "PUT" || request.method == "PATCH") {
         _.extend(context.params, request.body);
       }
       if(request.method == "GET" || _.size(request.query)) {
